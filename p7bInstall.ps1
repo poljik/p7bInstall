@@ -46,7 +46,7 @@ $form.Controls.Add($listBox)
 $form.Topmost = $true
 $result = $form.ShowDialog()
 if ($result -eq [System.Windows.Forms.DialogResult]::OK) {
-    $x = $listBox.SelectedItem
+    $x = $listBox.SelectedItems
     for ( $index = 0; $index -lt $x.count; $index++) {
         $key = Get-ChildItem $keysPath -Include $x[$index] -Recurse -Force
         AvCmUt4.exe -i $key -LOG NUL > $Null
